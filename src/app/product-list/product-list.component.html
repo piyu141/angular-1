@@ -1,0 +1,21 @@
+<div class="row my-3">
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" *ngFor="let product of productList">
+        <mat-card class="example-card mb-4">
+            <mat-card-header class="d-block text-center">
+                <img mat-card-image [src]="product.img" class="w-100 text-center">
+                <h1 class="text-center mb-0">{{product.name}}</h1>
+                <h3 class="text-danger">{{product.price | currency}}</h3>
+            </mat-card-header>
+            <mat-card-content class="text-center">
+                <div class="d-inline">
+                    <button mat-raised-button color="basic" (click)="decrement(product)">-</button>
+                    <label class="border py-2 px-4 mx-1">{{product.quantity}}</label>
+                    <button mat-raised-button color="basic" (click)="increment(product)">+</button>
+                </div>
+                <div class="mt-1">
+                    <button mat-raised-button color="accent" (click)="addtocart(product)">Add to Bag</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
